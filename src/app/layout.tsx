@@ -5,9 +5,8 @@ import { cn } from '@/lib/utils'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Optimized Next.js Template by Anmol Baranwal',
-  description:
-    '✨ Optimized Template for Next.js 14 + TypeScript + Tailwind with eslint commands, prettier configuration, strict ESLint rules & standards of GitHub repo.',
+  title: 'Arcjet Demo',
+  description: '✨ The testing of all of the core features of Arcjet.',
 }
 
 export default function RootLayout({
