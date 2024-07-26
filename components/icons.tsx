@@ -10,9 +10,11 @@ import {
   ChevronLeft,
   Eye,
   EyeOff,
+  Home,
 } from 'lucide-react'
 
 export const Icons = {
+  home: Home,
   sun: SunMedium,
   moon: Moon,
   user: User,
