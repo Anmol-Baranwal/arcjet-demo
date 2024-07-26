@@ -46,7 +46,10 @@ export default function Page() {
   return (
     <div>
       <div className="min-h-screen bg-black">
-        <Header title="Form Protection Example" docsLink="/docs" />
+        <Header
+          title="Form Protection Example"
+          docsLink="/https://docs.arcjet.com/signup-protection/quick-start/nextjs"
+        />
         <form onSubmit={onSubmit} className="px-6">
           <Input
             type="text"

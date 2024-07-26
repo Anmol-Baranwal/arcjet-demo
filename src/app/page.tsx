@@ -39,11 +39,8 @@ export default function Home() {
         >
           Rate limiting
         </Link>
-        <Link
-          href="/attack-protection"
-          className={buttonVariants({ variant: 'primary' })}
-        >
-          Attack protection
+        <Link href="/shield" className={buttonVariants({ variant: 'primary' })}>
+          Shield Demonstration
         </Link>
       </div>
     </div>
