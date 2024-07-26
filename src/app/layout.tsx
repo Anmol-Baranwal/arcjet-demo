@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import React from 'react'
+import GitHubCornerEffect from '@/components/github-corner-effect'
 
 export const metadata: Metadata = {
   title: 'Arcjet Demo',
@@ -23,6 +24,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <GitHubCornerEffect />
       </body>
     </html>
   )

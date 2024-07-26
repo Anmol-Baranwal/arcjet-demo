@@ -1,7 +1,9 @@
+import Link from 'next/link'
+
 export default function GitHubCornerEffect() {
   return (
     <div className="corner">
-      <a
+      <Link
         href="https://github.com/Anmol-Baranwal/arcjet-demo"
         target="_blank"
         className="github-corner"
@@ -34,7 +36,7 @@ export default function GitHubCornerEffect() {
             className="octo-body"
           ></path>
         </svg>
-      </a>
+      </Link>
     </div>
   )
 }
