@@ -7,17 +7,17 @@ const aj = arcjet({
   rules: [
     detectBot({
       mode: 'LIVE', // will block requests. Use "DRY_RUN" to log only
-      block: ['AUTOMATED'], // blocks all automated clients (LIKELY_AUTOMATED is also another option)
-      patterns: {
-        remove: [
-          // Removes the datadog agent from the list of bots so it will be
-          // considered as ArcjetBotType.LIKELY_NOT_A_BOT
-          'datadog agent',
-          // Also allow curl clients to pass through. Matches a user agent
-          // string with the word "curl" in it
-          '^curl',
-        ],
-      },
+      block: ['AUTOMATED', 'LIKELY_AUTOMATED'], // blocks all automated clients (LIKELY_AUTOMATED is also another option)
+      // patterns: {
+      //   remove: [
+      //     // Removes the datadog agent from the list of bots so it will be
+      //     // considered as ArcjetBotType.LIKELY_NOT_A_BOT
+      //     'datadog agent',
+      //     // Also allow curl clients to pass through. Matches a user agent
+      //     // string with the word "curl" in it
+      //     '^curl',
+      //   ],
+      // },
     }),
   ],
 })

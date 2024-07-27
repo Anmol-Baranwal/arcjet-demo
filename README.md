@@ -19,8 +19,6 @@ This project is hosted on Vercel. Visit the [arcjet-demo.vercel.app](https://arc
 <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 
-- [Infisical](https://github.com/Infisical/infisical) for managing the secret.
-
 <hr>
 
 ## Learn More

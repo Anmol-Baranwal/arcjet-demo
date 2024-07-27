@@ -19,7 +19,7 @@ export async function GET(req: Request) {
   const decision = await aj.protect(req, { userId, requested: 1 }) // Deduct 1 token from the bucket
   console.log('Arcjet SDK decision', decision)
 
-  if (decision.isDenied()) {
+  if (decision.isDenied() && decision.reason.isRateLimit()) {
     return NextResponse.json(
       { error: 'Too Many Requests', reason: decision.reason },
       { status: 429 }

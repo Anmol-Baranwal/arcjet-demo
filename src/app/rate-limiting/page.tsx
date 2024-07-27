@@ -51,8 +51,8 @@ export default function RateLimiting() {
 
   return (
     <div className="min-h-screen bg-black">
-      <Header title="Rate Limiting Example" docsLink="/docs" />
-      <div className="container py-20">
+      <Header title="Rate Limiting Example" docsLink="/https://docs.arcjet.com/rate-limiting/quick-start/nextjs" />
+      <div className="container pb-20 pt-12">
         <button
           onClick={handleClick}
           className={buttonVariants({ variant: 'primary' })}

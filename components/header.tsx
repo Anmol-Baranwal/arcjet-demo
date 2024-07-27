@@ -10,11 +10,23 @@ const Header: React.FC<HeaderProps> = ({ title, docsLink }) => {
   return (
     <>
       <div className="absolute left-6 top-6">
-        <Link href={'/'}>
-          <div className="flex text-white">
-            <Icons.home className="mr-2 h-6 w-6 text-white" /> Home
+        <div className="flex items-center justify-center">
+          <div className="flex">
+            <Link href={'/'}>
+              <div className="flex items-center justify-center text-white">
+                <Icons.home className="mr-2 h-4 w-4 text-white" /> Home
+              </div>
+            </Link>
           </div>
-        </Link>
+          <div className="mx-4 h-8 w-[1px] bg-white/25"></div>
+          <div className="flex pl-0">
+            <Link href={'https://twitter.com/Anmol_Codes'}>
+              <div className="flex items-center justify-center text-white">
+                <Icons.X className="mr-2 h-4 w-4 text-white" /> Made by Anmol
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="px-6 pt-28">
         <h2 className="text-3xl font-extrabold leading-tight tracking-tighter text-white md:text-4xl">
