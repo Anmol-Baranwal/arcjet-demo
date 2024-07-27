@@ -12,7 +12,7 @@ export default function Page() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setIsLoading(true)
-    setError(null) // Clear previous errors when a new request starts
+    setError(null)
     setData('')
     try {
       const formData = new FormData(event.currentTarget)

@@ -21,7 +21,9 @@ export default async function AttackProtection() {
           https://arcjet-demo.vercel.app/api/shield
         </pre>
         <p className="py-4 text-gray-300">
-          Your IP will be blocked for 60 seconds.
+          After the 5th request, your IP will be blocked for 15 minutes.
+          Suspicious requests must meet a threshold before they are blocked to
+          avoid false positives.
         </p>
       </div>
     </div>
