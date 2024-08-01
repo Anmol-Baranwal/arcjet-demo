@@ -3,55 +3,30 @@
 import Header from '@/components/header'
 import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function RateLimiting() {
   const [message, setMessage] = useState('')
-  const [remaining, setRemaining] = useState(2)
-  const [timer, setTimer] = useState(0)
 
   const handleClick = async () => {
-    if (remaining > 0) {
-      const res = await fetch('/api/rate-limiting')
-      const data = await res.json()
-      const newMessage = `HTTP ${res.status}: ${data.message}. ${remaining - 1} requests remaining.`
-      setMessage(newMessage)
+    const res = await fetch('/api/rate-limiting')
+    const data = await res.json()
 
-      // Update the remaining requests
-      setRemaining(remaining - 1)
-
-      // If this is the first click, start the timer
-      if (remaining === 2) {
-        setTimer(40)
-      }
+    if (res.status === 429) {
+      setMessage(data.error)
     } else {
-      setMessage('HTTP 429: Too many requests.')
+      setMessage(
+        `HTTP 200: OK. ${data.remaining} requests remaining. Reset in ${data.reset} seconds.`
+      )
     }
   }
 
-  useEffect(() => {
-    let interval: string | number | NodeJS.Timeout | undefined
-    if (timer > 0) {
-      interval = setInterval(() => {
-        setTimer((timer) => timer - 1)
-      }, 1000)
-    } else if (timer === 0 && remaining === 0) {
-      setRemaining(2) // Reset the remaining requests after timer ends
-      setMessage('')
-    }
-
-    return () => clearInterval(interval)
-  }, [remaining, timer])
-
-  useEffect(() => {
-    if (timer > 0 && remaining === 0) {
-      setMessage(`HTTP 429: Too many requests.`)
-    }
-  }, [timer, remaining])
-
   return (
     <div className="min-h-screen bg-black">
-      <Header title="Rate Limiting Example" docsLink="/https://docs.arcjet.com/rate-limiting/quick-start/nextjs" />
+      <Header
+        title="Rate Limiting Example"
+        docsLink="/https://docs.arcjet.com/rate-limiting/quick-start/nextjs"
+      />
       <div className="container pb-20 pt-12">
         <button
           onClick={handleClick}
@@ -61,15 +36,17 @@ export default function RateLimiting() {
         </button>
         {message && (
           <div className="mt-4 w-fit rounded border border-dashed border-white bg-transparent p-4 text-white">
-            <p>
-              {message} {`Reset in ${timer} seconds.`}
-            </p>
+            <p>{message}</p>
           </div>
         )}
       </div>
       <p className="container space-y-1 text-gray-400">
-        <div>The limit is set to 2 requests every 40 seconds.</div>
         <div>
+          The limit is set to 4 requests every 60 seconds. <br />
+          After this, 2 requests are refilled every minute until it reaches 4
+          requests. Use it wisely :)
+        </div>
+        <div className="pt-1">
           Rate limits can be{' '}
           <Link
             href={'https://docs.arcjet.com/reference/nextjs#ad-hoc-rules'}
