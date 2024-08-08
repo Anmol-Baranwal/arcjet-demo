@@ -1,11 +1,10 @@
-
-![banner](https://github.com/Anmol-Baranwal/Html2PDF/assets/74038190/ae958f4d-85b4-409b-859c-cbab618af911)
+![banner](https://github.com/user-attachments/assets/6c523d0b-f0d2-4639-95b9-11255427bac8)
 
 ## Arcjet Complete Demo
 
 This project contains demo code to implement the [Arcjet](https://arcjet.com/) security layer for your Next.js app.
 
-Read the complete tutorial at dev.to/anmolbaranwal.
+Read the complete tutorial at [dev.to/anmolbaranwal](https://dev.to/anmolbaranwal/make-your-app-10x-secure-with-arcjet-protection-layer-20fj).
 
 ## :fire: Deployed Link ##
 
